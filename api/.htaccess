@@ -1,0 +1,23 @@
+RewriteEngine On
+
+# Permitir CORS
+<IfModule mod_headers.c>
+    Header always set Access-Control-Allow-Origin "*"
+    Header always set Access-Control-Allow-Methods "GET, POST, OPTIONS"
+    Header always set Access-Control-Allow-Headers "Content-Type, Authorization, X-Auth-Token"
+</IfModule>
+
+# Manejar rutas RESTful
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Ruta: /api/login -> login.php
+RewriteRule ^login$ login.php [L,QSA]
+
+# Ruta: /api/tickets/tecnico -> tickets.php?tipo=tecnico
+RewriteRule ^tickets/tecnico$ tickets.php?tipo=tecnico [L,QSA]
+
+# Ruta: /api/tickets/gestionar -> tickets.php
+RewriteRule ^tickets/gestionar$ tickets.php [L,QSA]
+
+

@@ -1,0 +1,46 @@
+╔══════════════════════════════════════════════════════════════╗
+║     INSTRUCCIONES RÁPIDAS - SOLUCIÓN ERROR EXPO             ║
+╚══════════════════════════════════════════════════════════════╝
+
+PROBLEMA:
+Windows no permite crear carpetas con ":" en el nombre.
+Expo intenta crear "node:sea" y falla.
+
+═══════════════════════════════════════════════════════════════
+
+SOLUCIÓN RÁPIDA (3 pasos):
+
+1. Abre PowerShell
+
+2. Ejecuta estos comandos (copia y pega uno por uno):
+
+   cd C:\Users\Yecsa\Documents\ProyectoFinalMovil\movil
+   $env:EXPO_NO_METRO_LAZY = "1"
+   npx expo start --clear
+
+3. ¡Listo! Expo debería iniciar correctamente.
+
+═══════════════════════════════════════════════════════════════
+
+SOLUCIÓN EN UNA LÍNEA (más rápida):
+
+Copia y pega TODO esto de una vez:
+
+cd C:\Users\Yecsa\Documents\ProyectoFinalMovil\movil; $env:EXPO_NO_METRO_LAZY = "1"; npx expo start --clear
+
+═══════════════════════════════════════════════════════════════
+
+IMPORTANTE:
+
+❌ NO ejecutes solo: npx expo start
+   (Siempre fallará sin la variable)
+
+✅ SIEMPRE ejecuta primero: $env:EXPO_NO_METRO_LAZY = "1"
+   (Luego puedes ejecutar npx expo start)
+
+═══════════════════════════════════════════════════════════════
+
+Si cierras PowerShell, vuelve a ejecutar los comandos.
+
+Para más detalles, lee: SOLUCION_PASO_A_PASO.md
+
